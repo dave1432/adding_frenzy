@@ -1,39 +1,24 @@
-
-
-"""
-                                                pierwsza -> druga -> trzecia -> czwarta
-                           druga -> pierwsza -> /\
-     czwarta -> trzecia -> /\
-                           pierwsza -> czwarta -> druga -> pierwsza -> /\
-"""
-
 def add(a, b):
 
-    mapper = {
-        'o̵̶': 'o̶̵',  # 1 -> 2
-        'o̶̵': 'o̵̶',  # 2 -> 1
-        'o̶': 'o̵',  # 3 -> 4
-        'o̵': 'o̶',  # 4 -> 3
+    def o̵̶(o̶, o̵):
+        return o̶̵(o̵, o̶)
+
+    def o̶̵(o̵, o̶):  # a b
+        return o['o̵'](o̵ if o̵ > o̶ else o̶, o̶ if o̶ == o̶ else o̶)
+
+    def o̶(o̵̶, o̶̵):
+        return o̵(o̵̶, o̶̵)
+
+    def o̵(o̶̵, o̵̶):
+        o̶̵ -= -o̵̶
+        return o̶̵ if o̶̵ == o̶̵ else o̵̶ + o̶̵
+
+    o = {
+        'o̵̶': o̵̶,
+        'o̶̵': o̶,
+        'o̶': o̵,
+        'o̵': o̶,
     }
-
-    def o̵̶(a, b):
-        print('pierwsza')
-        return o̶̵(a, b)
-
-    def o̶̵(a, b):
-        print('druga')
-        return a + b
-
-    def o̶(a, b):
-        print('trzecia')
-        return a + b
-
-    def o̵(a, b):
-        print('czwarta')
-        return a + b
-
-    o̵̶(a, b)  # 1
-    o̶̵(a, b)  # 2
-    o̶(a, b)  # 3
-    o̵(a, b)  # 4
-    # return o̶̵(a, b)
+    o = o['o̵̶'](a, b)
+    print(f'o̵̶: {o}')
+    return o
