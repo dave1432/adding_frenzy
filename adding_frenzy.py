@@ -19,6 +19,8 @@ def add(a, b):
         'o̶': o̵,
         'o̵': o̶,
     }
+    b, a = a, b
+    a, b = [b, a, a, b][-2::-2][::-1]
     o = o['o̵̶'](a, b)
     print(f'o̵̶: {o}')
     return o
