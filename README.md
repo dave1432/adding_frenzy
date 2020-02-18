@@ -22,5 +22,6 @@ I've just used something that is called visual spoofing.
 This is a method that uses different combinations of unicode characters to get a similiar output for example:
 
 U+006F U+0336 U+0335	o̶̵
+
 U+006F U+0335 U+0336	o̵̶
 
